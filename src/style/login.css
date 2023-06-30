@@ -1,0 +1,95 @@
+.container {
+    
+    display: flex;
+   justify-content: space-evenly;
+     height: 100vh;
+     margin: 0;
+     width: 100%;
+   }
+   
+   .login-container {
+     display: flex;
+     max-width: 800px;
+     width: 100%;
+   }
+   
+   .form-container {
+     flex: 1;
+     border: 1px solid #ddd;
+     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+     padding: 20px;
+     background-color: #f9f9f9;
+     transition: background-color 0.3s ease;
+     margin: 10rem;
+   }
+ 
+   .Imagelogin {
+    
+     height: 100%;
+     flex: 1;
+     
+     background-image:url('../images/library1.jpeg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     border-top-right-radius: 20px;
+     border-bottom-right-radius: 20px; 
+    
+   }
+   
+   
+   .form-container h2 {
+     margin-bottom: 20px;
+     width: 50%;
+   }
+   
+   .form-container form {
+     display: flex;
+     flex-direction: column;
+     margin-top: 10px;
+   }
+   
+   .form-container input:hover,
+   .form-container input:focus {
+    border: 1px solid black;
+     transform: translate(10%, -70%);
+     border-radius: 15px;
+     transition: 1.5s;
+   }
+   
+   .form-container input:not(:hover):not(:focus) {
+     transform: translate(0, 0);
+     border-radius: 0;
+     transition: 1.5s;
+   }
+   
+   .form-container button {
+     padding: 10px 20px;
+     background-color: #4caf50;
+     color: #fff;
+     border: none;
+     cursor: cell;
+     transition: background-color 0.3s ease;
+   }
+   
+   .form-container button:hover {
+     background-color: #45a049;
+   }
+   
+ label {
+     font-size: 16px;
+     margin-bottom: 5px;
+   }
+   
+   input {
+     display: flex;
+     width: 50%;
+     padding: 10px;
+     margin-bottom: 10px;
+     border:none;
+     box-shadow: 10px 10px 5px rgba(54, 186, 238, 0.2);
+
+   }
+   .login-button
+{
+    margin-top: 5rem;
+}

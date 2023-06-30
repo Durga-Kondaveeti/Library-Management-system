@@ -1,0 +1,19 @@
+.searchValues
+{
+    background-color: transparent;
+    border: none;
+    font-size: large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top:5px ;
+width: 100%;
+color: black;
+
+}
+
+
+button.searchValues:hover {
+    
+    background-color: red;
+    color:black ;
+  }
+  

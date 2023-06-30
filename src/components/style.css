@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Poppins:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --primary-color:#e1e1e1;
+    --secondary-color:rgb(112, 92, 92);
+}
+body{
+    background-color: var(--primary-color);
+}
+html{
+    font-size: 75.5%;
+}
+

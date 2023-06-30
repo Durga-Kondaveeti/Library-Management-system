@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+body
+{
+  background-color: white;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.taskBar
+{
+  background-color: white;
+  height: 5rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo
+{
+  width:10rem;
+  height:5rem;
+  
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.taskBar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.taskBar-button {
+  display: flex;
+  list-style: none;
+  margin-right: 20px; 
+
+
+}
+
+.taskBar-button li {
+  margin-left: 10px; 
+}
+
+.taskBar-button a {
+  color: black;
+  text-decoration: none;
+  font-size: medium;
+  font-family: Helvetica;
+}
+.taskBar-button button
+{
+  border: 0;
+  background-color: transparent;
+  font-size: medium;
+  font-family: Helvetica;
+  width: 6rem;
+}
+.taskBar-button li:hover
+{
+  transition: 0.5s;
+  transform: scaley(1.5);
+  transform: scalex(.7);
+  font-size: medium;
+  font-family:'Times New Roman', Times, serif  ;
+  border: 1px solid black;
+  background-color: rgb(50, 206, 206);
+  font-size: small;
 }
