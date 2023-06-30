@@ -13,13 +13,13 @@ function App() {
   return (
     
     <div className="App">
+        
+
       <BrowserRouter>
       <div className="taskBar">
           <center>
             <img src={logo} className="logo" alt="Logo"/>
           </center>
-          
-
 <div  className='taskBar-button'> 
 
 <li><a href="/">Home</a></li>

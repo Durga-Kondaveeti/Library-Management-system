@@ -23,7 +23,7 @@ const Card = ({ book }) => {
                 <div id="bottom">
                   <h3 id="title">{item.volumeInfo.title}</h3>
                   <p id="amount">&#8377;{amount}</p>
-                  <p id="count">Avaiable count:{parseInt(amount%100)+11}</p>
+                  <p id="count">Available count:{parseInt(amount%100)+11}</p>
                  
                 </div>
 

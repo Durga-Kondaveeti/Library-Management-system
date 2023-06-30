@@ -1,0 +1,141 @@
+// 1.Your best friend has a very interesting necklace with n pearls.
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+// Function to modify the necklace
+vector<int> modify_necklace(int n, int k, vector<int>& pearls) {
+    vector<int> modified_necklace(n);
+    for (int i = 0; i < n; i++) {
+        int new_index = (i - k + n) % n;
+        modified_necklace[new_index] = pearls[i];
+    }
+    return modified_necklace;
+}
+
+int main() {
+    int T;
+    cin >> T;
+
+    // Iterate over each test case
+    for (int t = 0; t < T; t++) {
+        int n, k;
+        cin >> n >> k;
+
+        vector<int> pearls(n);
+        for (int i = 0; i < n; i++) {
+            cin >> pearls[i];
+        }
+
+        // Modify the necklace
+        vector<int> modified_necklace = modify_necklace(n, k, pearls);
+
+        // Print the modified necklace
+        for (int i = 0; i < n; i++) {
+            cout << modified_necklace[i] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+// 2.Ahmed likes to travel a lot. 
+
+# Function to calculate the first digit of a number
+def calculate_first_digit(num):
+    while num >= 10:
+        num //= 10
+    return num
+
+# Function to handle the queries
+def handle_queries(N, friendliness, queries):
+    MOD = int(1e9) + 7
+    for query in queries:
+        query_type = query[0]
+        if query_type == 1:
+            city_idx, new_friendliness = query[1:]
+            friendliness[city_idx - 1] = new_friendliness
+        elif query_type == 2:
+            R = query[1]
+            enjoyment = 1
+            i = 0
+            while i * R + 1 <= N:
+                city_idx = 1 + i * R
+                enjoyment = (enjoyment * friendliness[city_idx - 1]) % MOD
+                i += 1
+            first_digit = calculate_first_digit(enjoyment)
+            print(first_digit, enjoyment)
+
+# Read the number of cities
+N = int(input())
+
+# Read the friendliness values of the cities
+friendliness = list(map(int, input().split()))
+
+# Read the number of queries
+Q = int(input())
+
+queries = []
+# Read the queries
+for _ in range(Q):
+    query = list(map(int, input().split()))
+    queries.append(query)
+
+# Handle the queries
+handle_queries(N, friendliness, queries)
+
+
+// 3.String matching where one string contains wildcard characters:
+
+
+def match_strings(pattern, text):
+    # If both strings are empty, return true
+    if not pattern and not text:
+        return True
+
+    # If the pattern is empty but the text is not, return false
+    if not pattern:
+        return False
+
+    # If the text is empty
+    if not text:
+        # If the pattern contains only "*", return true
+        if pattern == "*":
+            return True
+        else:
+            return False
+
+    # Consider the first characters of both strings
+    if pattern[0] == "?":
+        # If the first character of the pattern is "?", move to the next characters
+        # and recursively check if they match
+        return match_strings(pattern[1:], text[1:])
+    elif pattern[0] == "*":
+        # If the first character of the pattern is "*", we have two options:
+        # 1. Ignore the "*" and move to the next character in the pattern, while keeping the same character in the text
+        # 2. Move to the next character in the text, while keeping the same character in the pattern
+        # Check both options recursively and return true if any of them returns true
+        return match_strings(pattern[1:], text) or match_strings(pattern, text[1:])
+    else:
+        # If the first character of the pattern is not a wild card character,
+        # check if it matches the first character of the text
+        # If they match, move to the next characters and recursively check if they match
+        if pattern[0] == text[0]:
+            return match_strings(pattern[1:], text[1:])
+        else:
+            return False
+
+# Read the input strings
+pattern = input().strip()
+text = input().strip()
+
+# Check if the strings match
+if match_strings(pattern, text):
+    print("Yes")
+else:
+    print("No")
+

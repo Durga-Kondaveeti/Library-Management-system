@@ -7,11 +7,12 @@ const Modal=({show,item,onClose})=>{
         return null;
     }
     let thumbnail=item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
-    return(
+    return( 
         <>
             <div className="overlay">
                 <div className="overlay-inner">
-                    <button className="close" onClick={onClose}><i class="fas fa-times"></i></button>
+                    <button className="close" onClick={onClose}><h2>x</h2></button>
+
                     <div className="inner-box">
                         <img src={thumbnail} alt="" />
                         <div className="info">

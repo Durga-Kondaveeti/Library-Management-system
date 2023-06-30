@@ -19,15 +19,12 @@
      box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
      padding: 20px;
      background-color: #f9f9f9;
-     transition: background-color 0.3s ease;
-     margin: 10rem;
+    
    }
  
    .Imagelogin {
     
      height: 100%;
-     flex: 1;
-     
      background-image:url('../images/library1.jpeg');
      background-size: cover;
      background-repeat: no-repeat;
@@ -51,7 +48,7 @@
    .form-container input:hover,
    .form-container input:focus {
     border: 1px solid black;
-     transform: translate(10%, -70%);
+     transform: translate(30%, -70%);
      border-radius: 15px;
      transition: 1.5s;
    }
@@ -79,7 +76,11 @@
      font-size: 16px;
      margin-bottom: 5px;
    }
-   
+   .input-slots
+  {
+    margin-top: 20px;
+
+  }
    input {
      display: flex;
      width: 50%;
@@ -91,5 +92,6 @@
    }
    .login-button
 {
-    margin-top: 5rem;
+    margin-top: 10rem;
+   
 }

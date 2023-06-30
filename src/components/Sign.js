@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import '../style/sign.css'
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from './Auth';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -20,6 +22,8 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password).then((userCredential)=>console.log(userCredential))
+    .catch((error)=>console.log(error))
 
   };
 
