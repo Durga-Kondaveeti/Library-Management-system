@@ -1,46 +1,44 @@
-import { onAuthStateChanged, signOut } from 'firebase/auth';
-import React, { useEffect, useState } from 'react';
+import { signOut } from 'firebase/auth';
+import React, { createContext, useEffect, useState } from 'react';
 import { auth } from './Auth';
+import Navbar from './Navbar';
+import Login from './Login';
 
+export const authentication = createContext();
 
 const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
 
   useEffect(() => {
-    const listen = onAuthStateChanged(auth, (user) => {
+    auth.onAuthStateChanged(user => {
       if (user) {
         setAuthUser(user);
       } else {
         setAuthUser(null);
       }
     });
-    return () => listen();
   }, []);
 
   const signoutHandler = () => {
-    console.log(authUser);
     setAuthUser(null);
     console.log("signout");
-    console.log(authUser);
     signOut(auth);
-
-  }
+  };
 
   return (
     <div>
-      {authUser ? 
+      {authUser ? (
         <div>
-          <h1>signin</h1>
-          <button onClick={signoutHandler}>signout</button>
+          <Navbar />
         </div>
-       : 
-       <div>
-        <p>shit!!!!!</p>
-    
-      </div>
-      }
+      ) : (
+        <div>
+          <Login />
+         
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default AuthDetails;

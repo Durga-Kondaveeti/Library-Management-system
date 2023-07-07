@@ -10,9 +10,9 @@ const Main = () => {
     const [basedOn,setBasedOn]=useState("");
     const [loadingGif,setLoadingGif]=useState(true);
     const [showData, setShowData] = useState(false);
-    
-    useEffect=(()=>
-    {
+    const [cartItems, setCartItems] = useState([])
+useEffect=(()=>
+{
     const actualDelay = 2000; 
     const extendedDelay = 5000; 
     const loadingTimer = setTimeout(() => {
@@ -30,7 +30,8 @@ const Main = () => {
       clearTimeout(loadingTimer);
       clearTimeout(dataTimer);
     };
-  }, []);
+}, []);
+
     const searchBook=(evt)=>{
         if(evt.key==="Enter")
         { setLoadingGif(true)
@@ -38,7 +39,6 @@ const Main = () => {
             .then(res=>{
               setData(res.data.items);
               setLoadingGif(false);
-
             })
             .catch((err) => {
               console.log(err);
@@ -46,6 +46,7 @@ const Main = () => {
             });
         }
     }
+
   return ( 
     <>
       <div className='header'>
@@ -65,7 +66,7 @@ const Main = () => {
         
       </div>
     <div className='container'>
-       { loadingGif ? <img src={LoadingGif} alt="loading ..." style={{transitionDelay:'10s',width:'40rem',height:'40rem'}}/>:<Card book={bookData}/>}
+       { loadingGif ? <img src={LoadingGif} alt="loading ..." style={{transitionDelay:'15s',width:'40rem',height:'40rem'}}/>:<Card book={bookData}/>}
     </div>
     </>
   )

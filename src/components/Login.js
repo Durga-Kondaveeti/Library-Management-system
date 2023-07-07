@@ -1,8 +1,12 @@
+
 import React, { useState } from 'react'
 import '../style/login.css'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import {auth} from './Auth';
-import AuthDetails from './AuthDetails';
+import { BrowserRouter, Link,  Routes,Route } from 'react-router-dom';
+import Sign from './Sign';
+
+
 const Login = () => {
   
   const [email, setEmail] = useState('');
@@ -59,8 +63,9 @@ const Login = () => {
         </div>
         <button type="submit" className='login-button'><h3>Login</h3></button>
       </form>
+     
     </div>
-<AuthDetails/>
+   
     </div>
  
   );
