@@ -11,7 +11,10 @@ function App() {
 
   
   return (
+    <div>
+    <p>hello world</p>
      <AuthDetails/>
+     </div>
   );
 }
 

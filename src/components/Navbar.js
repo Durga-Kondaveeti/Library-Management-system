@@ -20,7 +20,7 @@ const Navbar = () => {
             <img src={logo} className="logo" alt="Logo"/>
           </center>
 <div  className='taskBar-button'> 
-        <li><Link to="/">name</Link></li>
+        <li><Link to="/">Home</Link></li>
         <li><Link to="/cart">Addcart</Link></li>
         <li><button onClick={()=>auth.signOut()}>signout</button></li>
 </div>
