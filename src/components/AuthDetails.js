@@ -3,11 +3,13 @@ import React, { createContext, useEffect, useState } from 'react';
 import { auth } from './Auth';
 import Navbar from './Navbar';
 import Login from './Login';
+import Sign from './Sign';
 
 export const authentication = createContext();
 
 const AuthDetails = () => {
   const [authUser, setAuthUser] = useState(null);
+  const [checkout , setCheckout] = useState(null);
 
   useEffect(() => {
     auth.onAuthStateChanged(user => {
@@ -19,10 +21,8 @@ const AuthDetails = () => {
     });
   }, []);
 
-  const signoutHandler = () => {
-    setAuthUser(null);
-    console.log("signout");
-    signOut(auth);
+  const handleCheckoutUpdate = (newCheckout) => {
+    setCheckout(newCheckout);
   };
 
   return (
@@ -33,8 +33,9 @@ const AuthDetails = () => {
         </div>
       ) : (
         <div>
-          <Login />
-         
+      {checkout ?
+          <Login redirectButton={setCheckout}/>:<Sign redirectButton={handleCheckoutUpdate}/>
+         }
         </div>
       )}
     </div>

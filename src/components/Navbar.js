@@ -22,7 +22,7 @@ const Navbar = () => {
 <div  className='taskBar-button'> 
         <li><Link to="/">Home</Link></li>
         <li><Link to="/cart">Addcart</Link></li>
-        <li><button onClick={()=>auth.signOut()}>signout</button></li>
+        {/* <li><button onClick={()=>auth.signOut()}>signout</button></li> */}
 </div>
       </div >
       <Routes><Route path='/' element={<Main/>}></Route></Routes>

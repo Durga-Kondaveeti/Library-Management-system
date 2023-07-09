@@ -3,7 +3,7 @@ import '../style/sign.css'
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './Auth';
 
-const Login = () => {
+const Sign = ({redirectButton}) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -68,10 +68,13 @@ const Login = () => {
         </div>
         <button type="submit"  className='signup-button'>Sign Up</button>
       </form>
+      <div className='redirectPagesButton'>
+      <h3>Already have account  <button onClick={()=>redirectButton(1)}>Login</button></h3>
+      </div> 
     </div>
     </div>
  
   );
 }
 
-export default Login
+export default Sign

@@ -3,11 +3,9 @@ import React, { useState } from 'react'
 import '../style/login.css'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import {auth} from './Auth';
-import { BrowserRouter, Link,  Routes,Route } from 'react-router-dom';
-import Sign from './Sign';
 
 
-const Login = () => {
+const Login = ({redirectButton}) => {
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -63,7 +61,10 @@ const Login = () => {
         </div>
         <button type="submit" className='login-button'><h3>Login</h3></button>
       </form>
-     
+      <div className='redirectPagesButton'>
+       
+      <h3>Don't have account  <button onClick={()=>redirectButton(null)}>signUp</button></h3>
+      </div>
     </div>
    
     </div>
