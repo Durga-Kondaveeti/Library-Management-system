@@ -63,7 +63,7 @@ const Login = ({redirectButton}) => {
       </form>
       <div className='redirectPagesButton'>
        
-      <h3>Don't have account  <button onClick={()=>redirectButton(null)}>signUp</button></h3>
+      <h3>Dont have account  <button onClick={()=>redirectButton(null)}>signUp</button></h3>
       </div>
     </div>
    
