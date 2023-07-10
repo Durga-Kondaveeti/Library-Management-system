@@ -17,7 +17,7 @@ const Sign = ({redirectButton}) => {
   };
 
   const handlePasswordChange = (event) => {
-    setPassword(event.target.value);Library-Management-system
+    setPassword(event.target.value);
   };
 
   const handleSubmit = (event) => {
